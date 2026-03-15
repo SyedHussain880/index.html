@@ -1,78 +1,143 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Syed Hussain | Portfolio</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
 
-body{
+*{
 margin:0;
-font-family:Arial;
-background:#0f172a;
-color:white;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
 }
+@font-face{
+font-family:"Aller";
+src:url("fonts/Aller_Bd.ttf") format("truetype");
+font-weight:bold;
+}
+body{
+background:white;
+color:#111;
+}
+
+/* NAVBAR */
 
 nav{
 display:flex;
 justify-content:space-between;
-padding:20px 40px;
-background:#020617;
+align-items:center;
+padding:25px 10%;
+border-bottom:1px solid #ddd;
+}
+
+.logo{
+font-weight:bold;
+letter-spacing:2px;
+}
+
+nav ul{
+list-style:none;
+display:flex;
+gap:30px;
 }
 
 nav a{
-color:white;
 text-decoration:none;
-margin-left:20px;
+color:#111;
+font-size:15px;
 }
+
+/* HERO */
 
 .hero{
 text-align:center;
-padding:120px 20px;
+padding:80px 20px;
+max-width:700px;
+margin:auto;
 }
 
 .hero h1{
-font-size:50px;
-margin-bottom:10px;
+font-size:58px;
+font-family:"Aller",Arial, sans-serif;
+margin-bottom:20px;
+color: #1F1F1F;
 }
 
 .hero p{
-color:#94a3b8;
+color:#666;
+line-height:1.6;
 }
 
-.btn{
-display:inline-block;
-margin-top:20px;
-padding:12px 25px;
-background:#38bdf8;
-color:black;
-border-radius:6px;
-text-decoration:none;
-font-weight:bold;
-}
-
-.container{
-max-width:1000px;
-margin:auto;
-padding:40px 20px;
-}
+/* PROJECTS */
 
 .projects{
+padding:40px 10%;
+}
+.projects h1{
+    margin-bottom: 25px;
+}
+.grid{
 display:grid;
-grid-template-columns:1fr 1fr;
-gap:20px;
+grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+gap:30px;
 }
 
+/* CARD DESIGN */
+
 .card{
-background:#1e293b;
-padding:20px;
-border-radius:10px;
+position:relative;
+overflow:hidden;
+height:280px;
+border-radius:8px;
+cursor:pointer;
 }
+
+/* IMAGE SETTINGS */
+
+.card img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:transform 0.4s ease;
+}
+
+/* IMAGE ZOOM EFFECT */
+
+.card:hover img{
+transform:scale(1.08);
+}
+
+/* OVERLAY */
+
+.overlay{
+position:absolute;
+bottom:0;
+left:0;
+right:0;
+background:rgba(0,0,0,0.75);
+color:white;
+padding:20px;
+opacity:0;
+transform:translateY(100%);
+transition:0.35s;
+}
+
+.card:hover .overlay{
+opacity:1;
+transform:translateY(0);
+}
+
+/* FOOTER */
 
 footer{
 text-align:center;
 padding:40px;
-color:#94a3b8;
+color:#777;
+font-size:14px;
 }
 
 </style>
@@ -81,83 +146,63 @@ color:#94a3b8;
 <body>
 
 <nav>
-<div><b>Syed Hussain</b></div>
 
-<div>
-<a href="#about">About</a>
-<a href="#projects">Projects</a>
-<a href="#contact">Contact</a>
-</div>
+<div class="logo">SYED HUSSAIN</div>
+
+<ul>
+<li><a href="#">Work</a></li>
+<li><a href="#">Contact</a></li>
+</ul>
+
 </nav>
 
 <section class="hero">
 
-<h1>Web Developer</h1>
-<p>Founder of Vector Vibes • I build modern websites for businesses.</p>
-
-<a class="btn" href="#projects">View My Work</a>
-
-</section>
-
-<div class="container">
-
-<section id="about">
-
-<h2>About Me</h2>
+<h1>Hi, I'm Syed Hussain!</h1>
 
 <p>
-I'm Syed Hussain, a web developer focused on building modern and responsive websites. 
-I design clean websites for businesses and personal brands using modern web technologies.
+A creative designer focused on logo design, branding, and vector illustration.
+I create clean and meaningful visual designs using Adobe Illustrator.
 </p>
 
 </section>
 
-<section id="projects">
+<section class="projects">
+    <h1>Logo's & Brand identity</h1>
 
-<h2>Projects</h2>
-
-<div class="projects">
+<div class="grid">
 
 <div class="card">
-<h3>Business Website</h3>
-<p>Modern business website with responsive design.</p>
+<img src="orion/main 2 logo.jpg" alt="">
+<div class="overlay">
+<h3>ORION — Construction</h3>
+<p>
+    Modern Logo & Brand identity Design</p>
+</div>
 </div>
 
 <div class="card">
-<h3>Landing Page</h3>
-<p>High converting landing page for startups.</p>
+<img src="sifero/main page.png" alt="">
+<div class="overlay">
+<h3>Vector Illustration</h3>
+<p>Adobe Illustrator Artwork</p>
+</div>
 </div>
 
 <div class="card">
-<h3>Portfolio Website</h3>
-<p>Personal portfolio design for a creative designer.</p>
+<img src="wolf esport /main.png" alt="">
+<div class="overlay">
+<h3>Logo Design</h3>
+<p>Brand Logo</p>
 </div>
-
-<div class="card">
-<h3>Restaurant Website</h3>
-<p>Restaurant website with online menu and booking.</p>
 </div>
 
 </div>
 
 </section>
-
-<section id="contact">
-
-<h2>Contact</h2>
-
-<p>Email: your@email.com</p>
-<p>Instagram: Vector Vibes</p>
-<p>GitHub: github.com/SyedHussain880</p>
-
-</section>
-
-</div>
 
 <footer>
-
-<p>© 2026 Syed Hussain</p>
-
+© 2026 Syed Hussain — Graphic Designer
 </footer>
 
 </body>

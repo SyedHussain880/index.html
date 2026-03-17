@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Syed Hussain | Portfolio</title>
 
 <style>
@@ -31,7 +33,7 @@ nav{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:25px 10%;
+padding:20px 8%;
 border-bottom:1px solid #ddd;
 }
 
@@ -43,7 +45,7 @@ letter-spacing:2px;
 nav ul{
 list-style:none;
 display:flex;
-gap:30px;
+gap:25px;
 }
 
 nav a{
@@ -62,7 +64,7 @@ margin:auto;
 }
 
 .hero h1{
-font-size:clamp(32px,6vw,58px);
+font-size:clamp(34px,6vw,58px);
 font-family:"Aller",Arial, sans-serif;
 margin-bottom:20px;
 color:#1F1F1F;
@@ -71,22 +73,29 @@ color:#1F1F1F;
 .hero p{
 color:#666;
 line-height:1.6;
+font-size:16px;
 }
 
 /* PROJECTS */
 
 .projects{
-padding:40px 10%;
+padding:40px 8%;
 }
 
 .projects h1{
-margin-bottom:25px;
+font-family:"Aller", Arial, sans-serif;
+font-size:clamp(24px,3vw,32px);
+color:#2F3A4A;
+margin-bottom:30px;
+letter-spacing:0.5px;
 }
+
+/* GRID */
 
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
 }
 
 /* CARD */
@@ -94,10 +103,12 @@ gap:25px;
 .card{
 position:relative;
 overflow:hidden;
-aspect-ratio:4/3;
+height:280px;
 border-radius:8px;
 cursor:pointer;
 }
+
+/* IMAGE */
 
 .card img{
 width:100%;
@@ -139,14 +150,12 @@ color:#777;
 font-size:14px;
 }
 
-/* MOBILE FIX */
+/* MOBILE OPTIMIZATION */
 
-@media (max-width:600px){
+@media (max-width:768px){
 
 nav{
-flex-direction:column;
-gap:15px;
-text-align:center;
+padding:18px 6%;
 }
 
 nav ul{
@@ -157,8 +166,16 @@ gap:15px;
 padding:60px 20px;
 }
 
-.projects{
-padding:40px 6%;
+.hero p{
+font-size:15px;
+}
+
+.grid{
+grid-template-columns:1fr;
+}
+
+.card{
+height:240px;
 }
 
 }
@@ -196,16 +213,16 @@ I create clean and meaningful visual designs using Adobe Illustrator.
 
 <div class="grid">
 
-<div class="card">
-<img src="main 2 logo.jpg" alt="">
+<a href="orion.html" class="card">
+<img src="orion/main 2 logo.jpg" alt="">
 <div class="overlay">
 <h3>ORION — Construction</h3>
 <p>Modern Logo & Brand Identity Design</p>
 </div>
-</div>
+</a>
 
 <div class="card">
-<img src="main page.png" alt="">
+<img src="sifero/main page.png" alt="">
 <div class="overlay">
 <h3>Vector Illustration</h3>
 <p>Adobe Illustrator Artwork</p>
@@ -213,7 +230,15 @@ I create clean and meaningful visual designs using Adobe Illustrator.
 </div>
 
 <div class="card">
-<img src="main.png" alt="">
+<img src="wolf esport /main.png" alt="">
+<div class="overlay">
+<h3>Logo Design</h3>
+<p>Brand Logo</p>
+</div>
+</div>
+
+<div class="card">
+<img src="nova/main page.png" alt="">
 <div class="overlay">
 <h3>Logo Design</h3>
 <p>Brand Logo</p>

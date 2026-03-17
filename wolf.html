@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>WOLF — Brand Identity</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#fff;
+color:#111;
+}
+
+/* NAVBAR */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:25px 10%;
+border-bottom:1px solid #ddd;
+}
+
+.logo{
+font-weight:bold;
+letter-spacing:2px;
+}
+
+nav ul{
+list-style:none;
+display:flex;
+gap:30px;
+}
+
+nav a{
+text-decoration:none;
+color:#111;
+font-size:15px;
+}
+
+/* BACK LINK */
+
+.back{ 
+padding:20px 10%;
+}
+
+.back a{
+text-decoration:none;
+color:#111;
+font-size:18px;
+}
+
+.back a:hover{
+color:#555;
+}
+
+/* HEADER */
+
+.header{
+max-width:1000px;
+margin:40px auto;
+text-align:center;
+line-height:1.7;
+padding:0 20px;
+}
+
+.header h2{
+font-family:"Aller",Arial, sans-serif;
+color:#1F1F1F;
+margin-bottom:20px;
+font-size: 28px;
+font-style: italic;
+}
+.header ul{
+list-style-position:inside;
+padding-left:0;
+margin-top:10px;
+}
+
+.header li{
+margin:6px 0;
+}
+.edit{
+    font-size: 18px;
+    color: #4d4d4d;
+    font: abdi, Arial, Helvetica, sans-serif;
+}
+.edit h3{
+    font-family: "Aller", Arial, sans-serif;
+    color: #1F1F1F;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+.edit ul{
+list-style-position:inside;
+padding-left:0;
+margin-top: 10px;
+}
+
+/* GALLERY */
+
+.gallery{
+padding:50px 10%;
+display:flex;
+flex-direction:column;
+gap:40px;
+}
+
+/* ROWS */
+
+.row1,
+.row2,
+.row3,
+.row4,
+.row5,
+.row6{
+display:grid;
+gap:10px;
+margin-bottom: 10px;
+}
+
+.row1{grid-template-columns:0.91fr 2.09fr;}
+.row2{grid-template-columns:1.5fr 1.5fr;}
+.row3{grid-template-columns:1.79fr 1.31fr;}
+.row4{grid-template-columns:1.76fr 1.44fr;}
+.row5{grid-template-columns:1.3fr 1.7fr;}
+.row6{grid-template-columns:1.5fr 1.5fr;}
+
+.gallery img{
+width:100%;
+height:auto;
+object-fit:contain;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:40px;
+color:#777;
+font-size:14px;
+}
+
+
+/* ---------------- MOBILE RESPONSIVE ---------------- */
+
+@media (max-width:768px){
+
+nav{
+padding:20px 6%;
+}
+
+nav ul{
+gap:20px;
+}
+
+.back{
+padding:20px 6%;
+}
+
+.gallery{
+padding:40px 6%;
+gap:25px;
+}
+
+/* stack images */
+
+.row1,
+.row2,
+.row3,
+.row4,
+.row5,
+.row6{
+grid-template-columns:1fr;
+}
+
+.header{
+margin:50px auto;
+}
+
+.header h2{
+font-size:22px;
+}
+
+.header p{
+font-size:14px;
+}
+
+.header li{
+font-size:14px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">SYED HUSSAIN</div>
+
+<ul>
+<li><a href="#">Work</a></li>
+<li><a href="#">Contact</a></li>
+</ul>
+
+</nav>
+
+<div class="back">
+<a href="index.html">← Back</a>
+</div>
+
+<section class="header">
+
+<h2>WOLF — Esports Logo Design</h2>
+<div class="edit">
+<p>
+This project explores a bold and modern esports logo built around the name "WOLF" The goal was to create a strong visual identity where typography and illustration merge into a single symbol.
+</p>
+
+<p>
+The concept integrates wolf elements directly into the letterforms. The tail flows from the first letter, the central characters maintain a solid competitive structure, and the final letter transforms into the wolf's head. This approach creates a seamless connection between the animal and the team name, giving the logo a powerful and aggressive personality suitable for esports branding.
+</p>
+
+<p>
+The design process began with a rough pencil sketch to explore proportions, flow, and shape balance. After refining the structure, the sketch was digitally traced and cleaned in vector format to achieve a sharp, scalable logo suitable for professional use.
+</p>
+
+
+<h3>Logo Features</h3>
+
+<ul>
+  <li>Bold esports-style typography</li>
+  <li>Wolf elements integrated into the letterforms</li>
+  <li>Dynamic tail flowing from the first letter</li>
+  <li>Wolf head forming the final character</li>
+  <li>Clean vector design for scalability</li>
+  <li>Strong silhouette for easy recognition</li>
+</ul>
+</div>
+
+</section>
+
+<section class="gallery">
+
+<div class="row1">
+<img src="wolf esport /main.png">
+<img src="wolf esport /m5.jpg">
+</div>
+
+<div class="row2">
+<img src="wolf esport /m1.png">
+<img src="wolf esport /m2.png">
+</div>
+
+<div class="row3">
+<img src="wolf esport /m4.jpeg">
+<img src="wolf esport /m3.png">
+</div>
+
+<div class="row4">
+<img src="wolf esport /m purple logo.jpg">
+<img src="wolf esport /sketch.png">
+</div>
+
+<div class="row5">
+<img src="sifero/s8.jpeg">
+<img src="sifero/s9.jpeg">
+</div>
+
+<div class="row6">
+<img src="sifero/s10.jpeg">
+<img src="sifero/s11.jpeg">
+</div>
+
+</section>
+
+<footer>
+© 2026 Syed Hussain
+</footer>
+
+</body>
+</html>

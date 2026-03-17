@@ -6,7 +6,6 @@
 
 <title>ORION — Brand Identity</title>
 
-
 <style>
 
 *{
@@ -68,10 +67,18 @@ color:#555;
 
 .header{
 max-width:1000px;
-margin:80px auto;
+margin:40px auto;
 text-align:center;
 line-height:1.7;
 padding:0 20px;
+}
+
+.header h2{
+font-family:"Aller",Arial, sans-serif;
+color:#1F1F1F;
+margin-bottom:20px;
+font-size:28px;
+font-style:italic;
 }
 
 .header ul{
@@ -84,6 +91,18 @@ margin-top:10px;
 margin:6px 0;
 }
 
+.edit{
+font-size:18px;
+color:#4d4d4d;
+}
+
+.edit h3{
+font-family:"Aller", Arial, sans-serif;
+color:#1F1F1F;
+margin-top:30px;
+margin-bottom:15px;
+}
+
 /* GALLERY */
 
 .gallery{
@@ -93,16 +112,9 @@ flex-direction:column;
 gap:40px;
 }
 
-/* ROWS */
-
-.row1,
-.row2,
-.row3,
-.row4,
-.row5,
-.row6{
+.row1,.row2,.row3,.row4,.row5,.row6{
 display:grid;
-gap:20px;
+gap:10px;
 }
 
 .row1{grid-template-columns:1.04fr 1.96fr;}
@@ -116,7 +128,51 @@ gap:20px;
 width:100%;
 height:auto;
 object-fit:contain;
+cursor:pointer;
 }
+
+/* LIGHTBOX */
+
+.lightbox{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:1000;
+}
+
+.lightbox img{
+max-width:90%;
+max-height:90%;
+}
+
+.close{
+position:absolute;
+top:30px;
+right:40px;
+font-size:40px;
+color:white;
+cursor:pointer;
+}
+
+.prev,
+.next{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+font-size:45px;
+color:white;
+cursor:pointer;
+padding:10px;
+}
+
+.prev{left:40px;}
+.next{right:40px;}
 
 /* FOOTER */
 
@@ -127,8 +183,7 @@ color:#777;
 font-size:14px;
 }
 
-
-/* ---------------- MOBILE RESPONSIVE ---------------- */
+/* ---------------- MOBILE ---------------- */
 
 @media (max-width:768px){
 
@@ -149,31 +204,38 @@ padding:40px 6%;
 gap:25px;
 }
 
-/* stack images */
-
-.row1,
-.row2,
-.row3,
-.row4,
-.row5,
-.row6{
-grid-template-columns:1fr;
-}
-
-.header{
-margin:50px auto;
+.row1,.row2,.row3,.row4,.row5,.row6{
+grid-template-columns:2fr;
 }
 
 .header h2{
 font-size:22px;
 }
 
-.header p{
+.header p,
+.header li{
 font-size:14px;
 }
 
-.header li{
-font-size:14px;
+/* MOBILE LIGHTBOX IMPROVEMENTS */
+
+.prev,
+.next{
+font-size:32px;
+}
+
+.prev{left:10px;}
+.next{right:10px;}
+
+.close{
+top:15px;
+right:20px;
+font-size:32px;
+}
+
+.lightbox img{
+max-width:95%;
+max-height:85%;
 }
 
 }
@@ -184,14 +246,12 @@ font-size:14px;
 <body>
 
 <nav>
-
 <div class="logo">SYED HUSSAIN</div>
 
 <ul>
 <li><a href="#">Work</a></li>
 <li><a href="#">Contact</a></li>
 </ul>
-
 </nav>
 
 <div class="back">
@@ -202,21 +262,20 @@ font-size:14px;
 
 <h2>Orion Construction — Brand Identity</h2>
 
+<div class="edit">
+
 <p>
 The Orion logo represents strength, structure, and progress in the construction industry. 
-The circular symbol with horizontal layers reflects architectural floors and the step-by-step 
-process of building development. It visually communicates how structures are built layer by layer.
+The circular symbol with horizontal layers reflects architectural floors and the step-by-step process of building development.
 </p>
 
 <p>
-The circle also suggests a rising horizon, symbolizing growth, ambition, and forward movement. 
-Paired with a bold modern sans-serif wordmark, the identity feels reliable, contemporary, and 
-scalable across both digital and physical environments.
+The circle also suggests a rising horizon, symbolizing growth and forward movement. 
+Paired with a bold modern sans-serif wordmark, the identity feels reliable and contemporary.
 </p>
 
 <p>
-The color palette uses construction orange to represent energy and safety, balanced with deep 
-black to convey strength and professionalism.
+The color palette uses construction orange to represent energy and safety, balanced with deep black.
 </p>
 
 <h3>Logo Features</h3>
@@ -227,9 +286,10 @@ black to convey strength and professionalism.
 <li>Circle symbolizing unity and stability</li>
 <li>Rising horizon concept representing growth</li>
 <li>Modern bold typography</li>
-<li>Scalable design for signage, vehicles, and digital use</li>
+<li>Scalable design for signage and digital use</li>
 </ul>
 
+</div>
 </section>
 
 <section class="gallery">
@@ -250,8 +310,8 @@ black to convey strength and professionalism.
 </div>
 
 <div class="row4">
-<img src="orion mocup 4.png">
-<img src="fnl logo.jpg">
+<img src="orion/orion mocup 4.png">
+<img src="orion/fnl logo.jpg">
 </div>
 
 <div class="row5">
@@ -269,6 +329,53 @@ black to convey strength and professionalism.
 <footer>
 © 2026 Syed Hussain
 </footer>
+
+<!-- LIGHTBOX -->
+
+<div class="lightbox" id="lightbox">
+<span class="close">&times;</span>
+<img id="lightbox-img">
+<span class="prev">&#10094;</span>
+<span class="next">&#10095;</span>
+</div>
+
+<script>
+
+const images=document.querySelectorAll(".gallery img");
+const lightbox=document.getElementById("lightbox");
+const lightboxImg=document.getElementById("lightbox-img");
+
+const closeBtn=document.querySelector(".close");
+const prevBtn=document.querySelector(".prev");
+const nextBtn=document.querySelector(".next");
+
+let current=0;
+
+images.forEach((img,index)=>{
+img.addEventListener("click",()=>{
+lightbox.style.display="flex";
+lightboxImg.src=img.src;
+current=index;
+});
+});
+
+closeBtn.onclick=()=>{
+lightbox.style.display="none";
+};
+
+nextBtn.onclick=()=>{
+current++;
+if(current>=images.length){current=0;}
+lightboxImg.src=images[current].src;
+};
+
+prevBtn.onclick=()=>{
+current--;
+if(current<0){current=images.length-1;}
+lightboxImg.src=images[current].src;
+};
+
+</script>
 
 </body>
 </html>
